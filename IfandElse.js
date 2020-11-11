@@ -18,7 +18,12 @@ for (let i = 0; i < 5; i++) {
 console.log("max: " + max + "\nmin: " + min);
 
 //Check if the day is between March 20 and June 20
-let date = new Date(2018, 09, 24);
+let date;
+const prompt = require('prompt');
+prompt.start();
+prompt.get(["input"], function(err, res){
+    date = new Date(res.input);
+    });
 let month = date.getMonth();
 let day = date.getDate();
 let check = false;
