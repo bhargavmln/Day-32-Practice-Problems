@@ -18,14 +18,11 @@ for (let i = 0; i < 5; i++) {
 console.log("max: " + max + "\nmin: " + min);
 
 //Check if the day is between March 20 and June 20
-let date;
-const prompt = require('prompt');
-prompt.start();
-prompt.get(["input"], function(err, res){
-    date = new Date(res.input);
-    });
-let month = date.getMonth();
-let day = date.getDate();
+
+var prompt = require('prompt-sync')();
+let userDate = new Date(prompt('Enter the date:'));
+let month = userDate.getMonth();
+let day = userDate.getDate();
 let check = false;
 if (month < 7 && month > 2) {
     if (month == 3 && day < 20) {
@@ -43,7 +40,8 @@ if (month < 7 && month > 2) {
 console.log(check);
 
 //Check for leap year
-let year = 2000;
+var prompt = require('prompt-sync')();
+let year = prompt('Enter the year:');
 if (year > 999) {
     if (year % 4 == 0) {
         if (year % 100 != 0) {
